@@ -3,24 +3,20 @@ $('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
 
 // Timeblocks are color-coded to indicate if it's the past, present, or future //
 function tbColor() {
-    // Current time //
-    var currentHour = moment().hours();
+    var hour = moment().hours();
 
     $(".time-block").each(function() {
-        var hour = parseInt($(this).attr("id"));
+        var currentHour = parseInt($(this).attr("id"));
 
-        // if in the past //
-        if (hour < currentHour) {
+        if (currentHour < hour) {
             $(this).addClass("past");
-        // if in the present
-        } else if (hour === currentHour) {
+        } else if (currentHour === hour) {
             $(this).addClass("present");
-        // or if in the future
         } else {
-            $(this).addClass("future");
+            $(this).addClass("future")
         }
-    });
-}
+    })
+};
 
 // To color code each hour //
 tbColor();
@@ -31,7 +27,7 @@ saveBtn.on("click", function() {
     var time = $(this).siblings(".hour").text();
     var description = $(this).siblings("description").val();
 
-    localStorage.setItem(time, plan);
+    localStorage.setItem(time, description);
 });
 
 // Make saved events persist after refreshing page
@@ -41,11 +37,11 @@ function descriptionSave () {
         var hour = $(this).text();
         var description = localStorage.getItem(hour);
 
-        if(description !==null) {
+        if(description !== null) {
             $(this).siblings(".description").val(description);
         };
     });
 }
 
-// Call function so saved events persist even after refreshing page //
+// So saved events persist even after refreshing page //
 descriptionSave();
