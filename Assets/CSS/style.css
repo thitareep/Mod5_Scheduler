@@ -36,6 +36,7 @@ textarea {
   border-top: 1px solid white;
 }
 
+/* Styling for designated hour/time on timeblock */
 /* Added padding at top, wanted text further from top border */
 .hour {
   background-color: #ffffff;
