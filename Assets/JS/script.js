@@ -21,11 +21,13 @@ function tbColor() {
 // To color code each hour //
 tbColor();
 
+var saveBtn = $(".saveBtn");
 // Click event for save button. Save description to local storage
+
 saveBtn.on("click", function() {
 
     var time = $(this).siblings(".hour").text();
-    var description = $(this).siblings("description").val();
+    var description = $(this).siblings(".description").val();
 
     localStorage.setItem(time, description);
 });
