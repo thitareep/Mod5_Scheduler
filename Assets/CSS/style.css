@@ -46,21 +46,25 @@ textarea {
   font-weight: bold;
 }
 
+/* Color-coding for past events */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
 
+/* Color-coding for present events */
 .present {
   background-color: #c79bde;
   color: white;
 }
 
+/* Color-coding for future events */
 .future {
   background-color: #74abf2;
   color: white;
 }
 
+/* Styling for save button */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
